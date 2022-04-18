@@ -28,10 +28,13 @@ toast.success("Deleted Successfully");
     return(
         <div className="row ">
             <h4>Hello{user?.email}</h4>
-{/* <LogOut /> */}
+            <div className="text-left">
+                    <LogOut /> 
+
+            </div>
             <div className="text-center mt-4">
                 <Link to ="/add" className="btn btn-primary">
-                    Add Member
+                    Add Member+
                 </Link>
             </div>
             <div className="col-md-9  mx-auto p-5">
@@ -67,7 +70,7 @@ toast.success("Deleted Successfully");
                 <td>{member.number}</td>
                 <td>{member.Notes}</td>
                 <td>
-                    {/* <Link to={`/edit/${member.value}`} className="btn btn-small btn-primary  m-1">Edit</Link> */}
+                    <Link to={`/edit/${member.value}`} className="btn btn-small btn-primary  m-1">Edit</Link>
                     <button type="button" onClick={()=>deleteContact(member.value)}  className="btn btn-small btn-danger ml-5">                    <MdDelete/>
 </button>
                 </td>

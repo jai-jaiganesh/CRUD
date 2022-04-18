@@ -1,5 +1,5 @@
 
-// import firebase from "firebase/compat/app"
+import firebase from "firebase/compat/app"
 // require('dotenv').config()
 import { initializeApp } from "firebase/app";
 import {getAuth} from "firebase/auth";

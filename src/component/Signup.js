@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React, {  useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { auth } from './firebase';
 const Signup = () => {
    
@@ -10,6 +10,9 @@ const Signup = () => {
     const navigate=useNavigate();
  const register =async(event)=>{
      event.preventDefault()
+     if(!registerEmail||!registerPassword){
+        return toast.warning("Please fill the fields");
+    }
      try{
   const user=await createUserWithEmailAndPassword(auth,
     registerEmail,

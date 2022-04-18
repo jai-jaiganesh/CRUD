@@ -52,7 +52,7 @@ const Sorting = () => {
 </tbody>
 return(
  <button class="btn  dropup-toggle"  id="dropdownMenuButton"  
- onClick={()=>sorting("name")} >Status</button>
+ onClick={()=>sorting("status")} >Status</button>
   )
 }
 

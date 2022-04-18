@@ -1,6 +1,8 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react'
 import { Link,  useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 import { auth } from './firebase';
 const Signin = () => {
     const [loginEmail,setLoginEmail]=useState("");
@@ -9,6 +11,9 @@ const Signin = () => {
     const navigate=useNavigate();
  const login=async(e) =>{
      e.preventDefault()
+     if(!loginEmail||!loginPassword){
+        return toast.warning("Please fill the fields");
+    }
     try{
  const user=await signInWithEmailAndPassword(auth,
    loginEmail,
